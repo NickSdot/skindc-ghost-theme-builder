@@ -15,8 +15,10 @@ const
   //Content path needs to be absolute path for webpack
   contentPath = path.join(__dirname, projectConfig.contentPath),
   themesDirectory = path.join(contentPath, 'themes'),
-  themeName = packageJson.name,
-  themeDirectory = path.join(themesDirectory, themeName)
+  themeName = projectConfig.themeName || packageJson.name,
+  themeDirectory = path.join(themesDirectory, projectConfig.themeDirectory || themeName)
+
+console.info('Webpack config themeDirectory : ', themeDirectory)
 
 module.exports = function(env) {
 
@@ -27,8 +29,12 @@ module.exports = function(env) {
     defaultPlugins = [
       //The package plugin that auto generates the package.json inside your theme directory
       new GhostPackageJson(),
+      //We can set a source for the package.json if we want to.
+      //new GhostPackageJson({
+      // source: [pathToJSON]
+      //}),
       //The plugin to extract the compiled sass out to the css directory.
-      new ExtractTextPlugin(path.join('assets/js/', themeName + '.css'))
+      new ExtractTextPlugin(path.join('assets/css', themeName + '.css'))
     ]
 
   return {
@@ -43,7 +49,7 @@ module.exports = function(env) {
       publicPath: '/'
     },
 
-    devtool: release ? 'source-map' : 'eval',
+    devtool: !release ? 'source-map' : 'eval',
 
     bail: release,
 
@@ -63,15 +69,6 @@ module.exports = function(env) {
     new HtmlWebpackPlugin({
       template:  path.join(__dirname, 'src', 'index.html')
     }),*/
-    /*new FileWatcherPlugin({
-      root: __dirname,
-      files: ['package.json']
-    }),*/
-    /*new WatchExternalFilesPlugin({
-      files: [path.resolve(__dirname, 'package.json')]
-    }),*/
-
-    //see https://github.com/lucduong/webpack-zip-files-plugin
 
     resolveLoader: {
       // An array of directory names to be resolved to the current directory
@@ -87,7 +84,7 @@ module.exports = function(env) {
           options: {
             sourceRoot: path.resolve(__dirname),
             only: [
-              path.resolve(__dirname, 'src'),
+              path.resolve(__dirname, 'src')
             ]
           }
         }]
@@ -110,5 +107,5 @@ module.exports = function(env) {
         })
       }]
     }
-  };
-};
+  }
+}
