@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/skindc/skindc-ghost-theme-builder.git"
   },
-  "author": "Skin",
+  "author": {
+    "name": "Skin",
+    "email": "info@skinv1.co.uk"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/skindc/skindc-ghost-theme-builder/issues"
