@@ -1,7 +1,7 @@
 /**
  * This file is required to use knex-migrator.
  * This file varies from the file you will see if you have installed
- * a ghost instance via ghost-cli in that the values here point at the
+ * a ghost instance via ghost-cli in that the requires here point at the
  * the ghost npm dependency.
  */
 
@@ -23,9 +23,6 @@ module.exports = {
     //The database config object, similar to what your see in the
     //usual ghost configs
     database: config.get('database'),
-    migrationPath: config.get('paths:migrationPath'),
-    //The next are custom to the startup validations and tools
-    //for this theme builder.
-    defaultTheme: 'development',
-    contentPath: config.get('paths:contentPath')
+    //The below yet to be fully investigated
+    migrationPath: config.get('paths:migrationPath')
 };
