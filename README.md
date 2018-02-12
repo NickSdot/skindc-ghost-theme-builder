@@ -122,9 +122,19 @@ npm install -g knex-migrator
 
 This template is very configurable to help with naming conventions and theme directories.
 
-When first downloaded the template is setup with the casper theme to allow for an immediate example when running the server.
+When first downloaded this project is setup with the casper theme to allow for an immediate example when running the server.
 
 There is a file _ProjectConfig.js_ at the root of the project of which allows certain configuration without modifying the webpack.config.js. Each of the options are documented in this file and so I will not go into detail here.
+
+
+### Theme package.json
+
+As mentioned in the features list the package.json for your theme is automatically generated during theme development and theme release.
+
+By default all of the values for this file are extracted from the package.json for this project.
+Most of these are the normal package.json convention values yet in this example package.json you will see an aditional ghost entry. Anything here will be mapped to the theme package.json.
+
+If your theme name, description or other fields need to vary from the package.json for the project then they can be overiden in ProjectConfig.js.
 
 
 ## Testing your JS
@@ -138,7 +148,7 @@ I will try and set up some examples for implemtating test suites but it is not h
 
 ## Issues and Feedback
 
-This is the very early release of this template and although it is a replca of what I use to produce and manage my themes for my personal blogs. 
+This is the very early release of this template and although it is a replca of what I use to produce and manage my themes for my personal blogs I have quickly released a version for others to use.
 
 I find it very useful and so thought I would share it. It is stable but I appreciate the documentation may be a little light of which I will improve very soon.
 
