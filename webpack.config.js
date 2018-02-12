@@ -16,7 +16,10 @@ const
   contentPath = path.join(__dirname, projectConfig.contentPath),
   themesDirectory = path.join(contentPath, 'themes'),
   themeName = projectConfig.themeName || packageJson.name,
-  themeDirectory = path.join(themesDirectory, projectConfig.themeDirectory || themeName)
+  themeDescription = projectConfig.themeDescription || packageJson.description,
+  themeDirectory = path.join(themesDirectory, projectConfig.themeDirectory || themeName),
+  stylesName = projectConfig.stylesName || themeName,
+  javascriptName = projectConfig.javascriptName || themeName
 
 console.info('Webpack config themeDirectory : ', themeDirectory)
 
@@ -28,13 +31,15 @@ module.exports = function(env) {
 
     defaultPlugins = [
       //The package plugin that auto generates the package.json inside your theme directory
-      new GhostPackageJson(),
+      //new GhostPackageJson(),
       //We can set a source for the package.json if we want to.
-      //new GhostPackageJson({
-      // source: [pathToJSON]
-      //}),
+      new GhostPackageJson({
+        themeName: themeName, //Optional overrides use of project package.json name
+        themeDescription: themeDescription //Optional overrides use of project package.json description
+        // source: [pathToJSON] //Optional overrides the json used for values
+      }),
       //The plugin to extract the compiled sass out to the css directory.
-      new ExtractTextPlugin(path.join('assets/css', themeName + '.css'))
+      new ExtractTextPlugin(path.join('assets/css', stylesName + '.css'))
     ]
 
   return {
@@ -45,7 +50,7 @@ module.exports = function(env) {
 
     output: {
       path: themeDirectory,
-      filename: path.join('assets/js/', themeName + '.js'),
+      filename: path.join('assets/js/', javascriptName + '.js'),
       publicPath: '/'
     },
 
