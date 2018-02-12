@@ -10,3 +10,6 @@ import '../../package.json'
 //This is the entry point for all the sass for the site that will be precompiled
 //to css for the them. Again this has to be here so is accessible by the loader.
 import '../sass/index.scss'
+
+
+//Start your ES6 Javascript here.
