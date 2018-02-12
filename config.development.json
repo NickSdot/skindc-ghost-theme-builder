@@ -1,0 +1,39 @@
+{
+  "url": "http://localhost:2368",
+  "server": {
+    "port": 2368,
+    "host": "127.0.0.1"
+  },
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "content/data/ghost.db"
+    }
+  },
+  "mail": {
+    "transport": "Direct"
+  },
+  "logging": {
+    "transports": [
+      "stdout"
+    ]
+  },
+  "process": "local",
+  "paths": {
+    "contentPath": "content"
+  },
+  "privacy": {
+      "useRpcPing": false,
+      "useUpdateCheck": true
+  },
+  "useMinFiles": false,
+  "caching": {
+      "theme": {
+          "maxAge": 0
+      },
+      "admin": {
+          "maxAge": 0
+      }
+  },
+  "posts_per_page": 5
+}
