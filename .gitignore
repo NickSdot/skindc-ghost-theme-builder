@@ -1,6 +1,6 @@
 /node_modules/
-/dist
-/content/themes/skindd-ghost/assets/css/*.*
-/content/themes/skindd-ghost/assets/js/*.*
+/dist/**/*.*
+/content/themes/**/assets/css/*.*
+/content/themes/**/assets/js/*.*
+/content/themes/**/package.json
 /content/logs/*.*
-
