@@ -26,6 +26,8 @@ const bytes = require('utf8-length')
 function GhostPackageJson(options) {
   const o = options || {}
   this.source = o.source || 'package.json'
+  this.themeName = o.themeName
+  this.themeDescription = o.themeDescription
   this.startTime = Date.now()
   this.prevTimestamps = {}
 }
@@ -55,8 +57,8 @@ GhostPackageJson.prototype.apply = function(compiler) {
 
       var packageJson = JSON.parse(result),
         packageReplication = {
-          name: packageJson.name,
-          description: packageJson.description || '',
+          name: this.themeName || packageJson.name,
+          description: this.themeDescription || packageJson.description || '',
           version: packageJson.version,
           author: packageJson.author,
           engines: packageJson.ghost && packageJson.ghost.engines ?
