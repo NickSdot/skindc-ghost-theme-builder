@@ -18,9 +18,14 @@ module.exports = Object.assign(
     
     //The name of the theme to be used when building the theme components
     //(js and css assets) and distribution archive. 
-    //If this is not set then the name from the package.json for
+    //This is optional and if this is not set then the name from the package.json for
     //this project will be used.
     themeName: 'casper',
+
+    //The description of the theme to be applied to the themes package.json
+    //This is optional and if this is not set then the description from the package.json for
+    //this project will be used.
+    themeDescription: 'The default casper theme for demonstration',
     
     //Optional name for the css asset output if this needs to vary from themeName
     //stylesName: 'casper.css',
