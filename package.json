@@ -57,8 +57,5 @@
     "uuid-1345": "^0.99.6",
     "webpack": "^3.10.0",
     "webpack-zip-files-plugin": "^1.0.0"
-  },
-  "peerDependencies": {
-    "knex-migrator": "@latest"
   }
 }
