@@ -50,6 +50,14 @@ This project is setup as per the root of a ghost installation to be compliant wi
 
 Before we start it is worth noting that everything these commands do is completely configurable as everything is as standard configuration for Webpack and by modifying the _webpack.config.js to add, modify or remove loaders or plugins as you desire.
 
+### Install dependencies
+
+Before we do anything we need to install the npm depndencies;
+
+```
+npm install
+```
+
 ### Running the dev server
 
 To start the Ghost server and the Webpack watcher simply run the following command in your terminal from the root of the project
