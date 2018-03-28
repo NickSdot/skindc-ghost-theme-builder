@@ -103,7 +103,7 @@ This can still be done at this time and is documented later.
 
 ### The database
 
-The default database for this prjoect is an sqlite database and this can be found in the typical location _'content/data/ghost.db'_. When you download this project this database will be poulated with the default settings and content but would have not yet been initialised with a user account so you want to continue using this database you will have to set up the initail user by going to the ghost admin when the server is running.
+The default database for this prjoect is an SQLite database and this can be found in the typical location _'content/data/ghost.db'_. When you download this project this database will be poulated with the default settings and content but would have not yet been initialised with a user account so you want to continue using this database you will have to set up the initial user by going to the ghost admin when the server is running.
 
 The active theme will be set to development and therefore loading the theme files from _'content/themes/development'_. The files that are present in this directory at the minute replicate the default Ghost theme 'casper'.
 
@@ -156,9 +156,9 @@ I will try and set up some examples for implemtating test suites but it is not h
 
 ## Issues and Feedback
 
-This is the very early release of this template and although it is a replca of what I use to produce and manage my themes for my personal blogs I have quickly released a version for others to use.
+This is the very early release of this template and although it is a replica of what I use to produce and manage my themes for my personal blogs I have quickly released a version for others to use.
 
 I find it very useful and so thought I would share it. It is stable but I appreciate the documentation may be a little light of which I will improve very soon.
 
-I am very open to opinions and will help with issues where I can. Just post them on the githib project and I will get to them asap.
+I am very open to opinions and will help with issues where I can. Just post them on the github project and I will get to them asap.
 
